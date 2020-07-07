@@ -31,6 +31,11 @@ public class Player : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Player triggered");
+    }
+
     // Update is called once per frame
     void Update()
     {
