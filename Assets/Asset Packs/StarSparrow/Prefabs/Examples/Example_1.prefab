@@ -5009,7 +5009,12 @@ PrefabInstance:
     - target: {fileID: 626303640622619349, guid: a597ccb376ad73046b4ad70e868cde89,
         type: 3}
       propertyPath: m_Name
-      value: Bullets
+      value: Bullets Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 626303640622619350, guid: a597ccb376ad73046b4ad70e868cde89,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a597ccb376ad73046b4ad70e868cde89, type: 3}
@@ -5084,7 +5089,12 @@ PrefabInstance:
     - target: {fileID: 626303640622619349, guid: a597ccb376ad73046b4ad70e868cde89,
         type: 3}
       propertyPath: m_Name
-      value: Bullets (1)
+      value: Bullets Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 626303640622619350, guid: a597ccb376ad73046b4ad70e868cde89,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a597ccb376ad73046b4ad70e868cde89, type: 3}
