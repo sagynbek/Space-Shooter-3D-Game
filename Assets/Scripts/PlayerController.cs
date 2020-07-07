@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    [Header("General")]
     [Tooltip("In m/s")][SerializeField] float xSpeed = 15f;
     [Tooltip("In m/s")] [SerializeField] float xClamp = 5f;
 
@@ -15,15 +16,18 @@ public class Player : MonoBehaviour
     [Tooltip("In m/s")] [SerializeField] float zSpeed = 60f;
     [Tooltip("In m/s")] [SerializeField] float zClamp = 60f;
 
+    [Header("Control position")]
     [SerializeField] float positionPitchFactor = -5f;
-    [SerializeField] float controlPitchFactor = -20f;
-
     [SerializeField] float positionYawFactor = 5f;
 
+    [Header("Control throw")]
+    [SerializeField] float controlPitchFactor = -20f;
     [SerializeField] float controlRollFactor = -20f;
+
     
 
     float xThrow, yThrow;
+    bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,16 +35,16 @@ public class Player : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Player triggered");
-    }
-
     // Update is called once per frame
     void Update()
     {
+        if (isDead) { return; }
         ProcessTranslation();
         ProcessRotation();
+    }
+    private void StartDeathSequence() // called by string reference
+    {
+        isDead = true;
     }
 
     private void ProcessRotation()
